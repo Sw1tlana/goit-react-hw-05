@@ -1,0 +1,38 @@
+:root {
+    --light-background: #ffffff;
+    --light-gray-background: #d7d1d1;
+    --ligth-blue-background: #0abdd4;
+    --black-background: #2c2b2b;
+    --text-dark: #1B1B1B;
+    --blue-background: #4043ec;
+    --red-background: #e81d16;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
