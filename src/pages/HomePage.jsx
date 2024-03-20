@@ -13,6 +13,7 @@ const HomePage = () => {
         const fetchMovies = async () => {
             try {
                 setIsLoading(true);
+                setIsError(false);
                 const data = await requestMovies();
                 setMovies(data);
             } catch (error) {
@@ -26,12 +27,13 @@ const HomePage = () => {
 
   return (
       <div>
+       <h1>Trending today</h1>
         {isLoading && <Loader />}
         {isError && <ErrorMessage />}
             <ul>
               {movies !== null && movies.map((movie) => {
                   return <li key={movie.id}>
-                       <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
+                       <Link to={`/movies/${movie.id}`}><img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} /></Link>
                   </li>
                 })}
             </ul>

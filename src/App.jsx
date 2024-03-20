@@ -6,6 +6,7 @@ import css from "./App.module.css";
 
 import HomePage from "./pages/HomePage";
 import MoviesPage from "./pages/MoviesPage";
+import MovieDetailsPage from './pages/MovieDetailsPage';
 
 const getNavLinkClass = ({ isActive }) => {
   return clsx(css.headerLink, {
@@ -22,10 +23,10 @@ function App() {
       </header>
       
       <main>
-       <h1>Trending today</h1>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
         </Routes>
       </main>
     </div>

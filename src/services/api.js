@@ -17,3 +17,32 @@ export const requestMovies = async () => {
         return data.results;
 
 }
+
+export const requestMoviesByQuery = async (query) => {
+        const { data } = await axios.get('https://api.themoviedb.org/3/search/movie/day', {
+            params: {
+                language: "en-US",
+                api_key: API_KEY,
+                query: query
+            },
+            headers: {
+                Authorization: `Bearer ${API_ACCESS_TOKEN}`
+            }
+        });
+        return data.results;
+
+}
+
+export const requestMoviesById = async (movieId) => {
+        const { data } = await axios.get(`https://api.themoviedb.org/3/search/movie/${movieId}`, {
+            params: {
+                language: "en-US",
+                api_key: API_KEY
+            },
+            headers: {
+                Authorization: `Bearer ${API_ACCESS_TOKEN}`
+            }
+        });
+        return data.results;
+
+}
