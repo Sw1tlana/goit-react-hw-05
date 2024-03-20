@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { requestMovies } from "../services/api"
-import { Link } from "react-router-dom";
 import Loader from '../components/Loader/Loader';
 import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
+import MovieList from "../components/MovieList/MovieList";
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -30,13 +30,7 @@ const HomePage = () => {
        <h1>Trending today</h1>
         {isLoading && <Loader />}
         {isError && <ErrorMessage />}
-            <ul>
-              {movies !== null && movies.map((movie) => {
-                  return <li key={movie.id}>
-                       <Link to={`/movies/${movie.id}`}><img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} /></Link>
-                  </li>
-                })}
-            </ul>
+        <MovieList movies={movies}/>
       </div>
   )
 }
