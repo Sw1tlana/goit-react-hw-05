@@ -28,25 +28,30 @@ const MovieCast = () => {
     }, [movieId]);
     
     return (
-        <div>
+          <div>
             {isLoading && <Loader />}
             {isError && <ErrorMessage />}
-            {movieCast && movieCast.length > 0 &&
+            {movieCast && movieCast.length > 0 ? (
                 <div>
-                <ul>
-                    {movieCast.map(actor => (
-                        <li key={actor.id}>
-                            {actor.profile_path && (
-                                <img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} />
-                            )}
-                            <p>{actor.name}</p>
-                            <p>Character: {actor.character}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>}
+                    <ul>
+                        {movieCast.map(actor => (
+                            <li key={actor.id}>
+                                {actor.profile_path ? (
+                                    <img src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} />
+                                ) : (
+                                    <p>No photo available</p>
+                                )}
+                                <p>{actor.name}</p>
+                                <p>Character: {actor.character}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ) : (
+                <p>No cast available</p>
+            )}
         </div>
-  )
+    )
 }
 
 export default MovieCast

@@ -4,9 +4,9 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import "modern-normalize";
 import css from "./App.module.css";
 
-import HomePage from "./pages/HomePage";
-import MoviesPage from "./pages/MoviesPage";
-import MovieDetailsPage from './pages/MovieDetailsPage';
+import HomePage from "./pages/HomePage/HomePage";
+import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import MovieDetailsPage from './pages/MovieDetailsPage/MovieDetailsPage';
 
 const getNavLinkClass = ({ isActive }) => {
   return clsx(css.headerLink, {
