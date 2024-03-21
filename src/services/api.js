@@ -43,6 +43,21 @@ export const requestMoviesById = async (movieId) => {
                 Authorization: `Bearer ${API_ACCESS_TOKEN}`
             }
         });
-        return data.results;
+        return data;
+
+}
+
+export const requestMoviesByCast = async (movieId) => {
+        const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits`, {
+            params: {
+                language: "en-US",
+                api_key: API_KEY
+            },
+            headers: {
+                Authorization: `Bearer ${API_ACCESS_TOKEN}`
+            }
+        });
+    
+        return data;
 
 }

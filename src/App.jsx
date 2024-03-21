@@ -19,14 +19,14 @@ function App() {
     <div>
       <header className={css.header}>
         <NavLink className={getNavLinkClass} to="/">Home</NavLink>
-        <NavLink className={getNavLinkClass} to="/movies">Movies</NavLink>
+        <NavLink className={getNavLinkClass} to="/movies" end>Movies</NavLink>
       </header>
       
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
+          <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
         </Routes>
       </main>
     </div>
