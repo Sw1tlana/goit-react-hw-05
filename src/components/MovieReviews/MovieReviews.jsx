@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import css from "./MovieReviews.module.css";
 
 import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
@@ -29,23 +30,28 @@ const MovieReviews = () => {
     }, [movieId]);
 
   return (
-      <div>
-         {isLoading && <Loader />}
-            {isError && <ErrorMessage />}
+
+    <div className={css.container}>
+    {isLoading && <Loader />}
+    {isError && <ErrorMessage />}
+    {!isLoading && !isError && (
+        <div>
             {movieReviews && movieReviews.length > 0 ? (
-                <ul>
+                <ul className={css.listReviews}>
                     {movieReviews.map((review) => {
                         return <li key={review.id}>
-                            <h2>{review.author}</h2>
-                            <p>{review.content}</p>
-                            <p>{review.created_at}</p>
+                            <h2 className={css.nameReview}>{review.author}</h2>
+                            <p className={css.textReview}>{review.content}</p>
+                            <p className={css.createdReview}>{review.created_at}</p>
                         </li>
                     })}
                 </ul>
             ) : (
-                 <p>No reviews available</p>
+                <p className={css.infoText}>No reviews available</p>
             )}
         </div>
+    )}
+</div>
   )
 }
 

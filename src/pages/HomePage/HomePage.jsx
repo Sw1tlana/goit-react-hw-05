@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { requestMovies } from "../../services/api"
+
+import css from './HomePage.module.css';
 import Loader from '../../components/Loader/Loader';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import MovieList from "../../components/MovieList/MovieList";
@@ -26,8 +28,8 @@ const HomePage = () => {
     }, []);
 
   return (
-      <div>
-       <h1>Trending today</h1>
+      <div className={css.containerHome}>
+       <h1 className={css.heroTitle}>Trending today</h1>
         {isLoading && <Loader />}
         {isError && <ErrorMessage />}
         <MovieList movies={movies}/>

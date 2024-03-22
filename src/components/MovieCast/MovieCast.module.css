@@ -1,0 +1,21 @@
+.listCast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nameCast {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.miniAccent {
+    font-weight: 600;
+}
+
+.infoText {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--red-background);
+}

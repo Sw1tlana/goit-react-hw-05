@@ -1,0 +1,24 @@
+.listReviews {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.nameReview {
+    margin-bottom: 8px;
+
+}
+
+.textRewiew {
+    margin-bottom: 8px;
+}
+
+.createdReview {
+   font-weight: 700;
+}
+
+.infoText {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--red-background);
+}
