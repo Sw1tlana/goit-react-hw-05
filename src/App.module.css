@@ -1,24 +1,49 @@
-
 .header {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 0;
-    border-bottom: 1px solid black;
+    gap: 20px;
+    padding: 20px 40px;
+    background-color: var(--black-background);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .headerLink {
-    display: flex;
-    padding: 14px 24px;
     text-decoration: none;
-    color: black;
-    background-color: transparent;
-    border: 1px solid black;
-    border-radius: 6px;
-    transition: all .3s;
+    color: var(--light-background);
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    position: relative;
 }
 
-.active {
-    color: white;
-    background-color: black;
+.headerLink:hover {
+    background-color: var(--light-blue-background);
+    box-shadow: 0 0 20px var(--blue-background);
+}
+
+.headerLink.active {
+    background-color: var(--ligth-blue-background);
+    color: var(--light-background);
+    border: none;
+    box-shadow: 0 0 20px var(--ligth-blue-background);
+}
+
+.headerLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--light-blue-background);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.headerLink:hover::before,
+.headerLink.active::before {
+    opacity: 1;
 }
