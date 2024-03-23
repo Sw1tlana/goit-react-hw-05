@@ -13,7 +13,6 @@ const MovieList = ({ movies }) => {
                 className={css.listImg}
                 src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/300'}
                 alt={movie.title}
-                style={{ width: '300px', height: '450px' }} 
               />
             </Link>
            </li>

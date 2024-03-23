@@ -37,12 +37,11 @@ const MovieCast = () => {
         <div className={css.container}>
             <ul className={css.listCast}>
                 {movieCast.map(actor => (
-                    <li key={actor.id}>
+                    <li className={css.listItemCast} key={actor.id}>
                         <img
                             className={css.castImg}
-                            src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : 'https://via.placeholder.com/200'}
+                            src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : 'https://via.placeholder.com/300'}
                             alt={actor.name}
-                            style={{ width: '200px', height: '300px' }} 
                         />
                         <h3 className={css.nameCast}>{actor.name}</h3>
                         <p><span className={css.miniAccent}>Character: </span>{actor.character}</p>

@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
         <NavLink className={getNavLinkClass} to="/movies" end>Movies</NavLink>
       </header>
       
-      <main className={css.skyContainer}>
+      <main>
        {children}
       </main>
     </div>

@@ -5,6 +5,17 @@
     gap: 10px;
 }
 
+.castImg {
+    height: 300px;
+}
+
+.listItemCast {
+    max-width: 300px;
+    min-height: 300px;
+    width: 100%;
+    height: 100%;
+}
+
 .nameCast {
     font-weight: 600;
     font-size: 18px;
