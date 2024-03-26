@@ -17,23 +17,6 @@ body {
     letter-spacing: 0.02em;
     font-size: 16px;
     color: var(--text-dark);
-    background: linear-gradient(45deg, #FFC0CB, #a0cfe1, #90EE90, #87CEEB, #c0cedc, #a4bed7, #99bcdf);
-    background-size: 200% 200%;
-    animation: gradient-animation 10s ease infinite;   
-}
-
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 h1,
