@@ -2,12 +2,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px 20px;
+    gap: 10px 20px;  
 }
 
 .listImg {
     width: 300px;
     height: 450px;
+    border-radius: 6px;
+}
+
+.movieListItem {
+    border-radius: 8px;
+    box-shadow: 8px 10px 10px var(--blue-animation);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listImg:hover {
+    transform: scale(1.02) translateY(-5px);
 }
 
 

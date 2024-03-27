@@ -7,7 +7,7 @@ const MovieList = ({ movies }) => {
     <div>
       <ul className={css.movieList}>
           {movies !== null && movies.map((movie) => {
-           return <li key={movie.id}>
+           return <li className={css.movieListItem} key={movie.id}>
             <Link state={location} to={`/movies/${movie.id}`}>
                 <img
                 className={css.listImg}
