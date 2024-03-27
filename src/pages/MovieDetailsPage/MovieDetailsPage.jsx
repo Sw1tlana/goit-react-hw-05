@@ -59,7 +59,7 @@ const MovieDetailsPage = () => {
                   <span className={css.miniDetails}>Genres: </span>{movieData.genres.map(genre => genre.name).join(', ')}</p>
                 </li>
                 )}
-            </ul>
+              </ul>
           </div>
         <h2 className={css.titleAddInformation}>Additional information</h2>
         </section>}
